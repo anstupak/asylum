@@ -57,6 +57,9 @@ ul {
 .Page__socials {
     grid-area: socials;
     margin-left: 4.125rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-end;
 }
 
 .Page__footer {
@@ -66,6 +69,10 @@ ul {
 .Page__maker {
     grid-area: maker;
     margin-right: 4.125rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .Menu {
@@ -85,6 +92,7 @@ ul {
     font-size: inherit;
     text-align: center;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 .Title__link {
