@@ -25,7 +25,7 @@ ul {
 
     display: grid;
     grid-template-areas:
-    "menu title langs"
+    "menu partnership langs"
     "body body body"
     "socials footer maker";
     grid-template-rows: 1fr 6fr 1fr;
@@ -33,14 +33,14 @@ ul {
     grid-gap: 10px;
 }
 
-.Page__menu {
+.Page__menu-button {
     grid-area: menu;
     margin-top: 2.5rem;
     margin-left: 4.125rem;
 }
 
-.Page__title {
-    grid-area: title;
+.Page__partnership {
+    grid-area: partnership;
     margin: 2.5rem 0 0;
 }
 
@@ -75,7 +75,7 @@ ul {
     align-items: flex-end;
 }
 
-.Menu {
+.MenuButton {
     padding: 0;
     border: none;
     background: none;
@@ -85,16 +85,28 @@ ul {
     align-items: center;
 }
 
-.Menu__text {
+.MenuButton__text {
     margin-left: 1rem;
     text-transform: uppercase;
 }
 
-.Title {
-    font-size: inherit;
+.Partnership {
+    text-align: center;
+}
+
+.Partnership__link {
+    padding: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
     text-align: center;
     text-transform: uppercase;
-    font-weight: 400;
+    text-decoration: none;
+}
+
+.Partnership__link:hover {
+    text-decoration: underline;
 }
 
 .Title__link {
