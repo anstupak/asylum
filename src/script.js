@@ -26,9 +26,9 @@ function run() {
  */
 function toggleMenu() {
     // Hide the header's elements when the menu is opened
-    header.classList.toggle('Header--with-menu');
+    header && header.classList.toggle('Header--with-menu');
     // Hide the footer when the menu is opened
-    footer.classList.toggle('Footer--with-menu');
+    footer && footer.classList.toggle('Footer--with-menu');
     // Shifts the page's content to the right.
     page.classList.toggle('Page--with-menu');
     // Toggles the menu.
