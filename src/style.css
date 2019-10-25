@@ -81,6 +81,8 @@ ul {
     background: none;
     color: inherit;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .Menu__text {
@@ -137,12 +139,20 @@ ul {
 .Brand {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 4rem;
 }
 
 .Brand__image {
     height: 35vh;
+}
+
+.Brand__text {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .Socials {
