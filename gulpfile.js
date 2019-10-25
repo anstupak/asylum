@@ -17,7 +17,7 @@ function watch_files() {
     watch('src/*.html', buildHtml);
     watch('src/*.js', buildScripts);
     watch('src/*.css', buildStyles);
-    watch('src/**/*.{png,svg}', buildImages);
+    watch('src/**/*.{jpg,png,svg}', buildImages);
     // watch('src/*.html', series(buildHtml, reload));
     // watch('src/*.js', series(buildScripts, reload));
     // watch('src/*.css', series(buildStyles, reload));
@@ -48,7 +48,7 @@ const buildImages = series(
         return del(['dist/img']);
     },
     function buildImages() {
-        return src('src/assets/**/*.{png,svg}')
+        return src('src/assets/**/*.{jpg,png,svg}')
             .pipe(dest('dist/img/'));
     },
 );
