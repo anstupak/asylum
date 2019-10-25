@@ -13,22 +13,59 @@ ul {
     list-style: none;
 }
 
+.Link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.Link:hover {
+    text-decoration: underline;
+}
+
+.Button {
+    padding: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.Button:hover {
+    text-decoration: underline;
+}
+
 .Page {
     height: 100vh;
-
-    display: grid;
-    grid-template-areas:
-    "menu partnership langs"
-    "body body body"
-    "socials footer maker";
-    grid-template-rows: 1fr 6fr 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-gap: 10px;
-
+    display: flex;
+    flex-direction: column;
     background-image: url('img/main/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+}
+
+.Page__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-areas: "menu partnership langs";
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.Page__body {
+    flex-grow: 1;
+}
+
+.Page__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-areas: "socials maker";
+    grid-template-columns: 1fr 1fr;
 }
 
 .Page__menu-button {
@@ -48,20 +85,12 @@ ul {
     margin-right: 4.125rem;
 }
 
-.Page__body {
-    grid-area: body;
-}
-
 .Page__socials {
     grid-area: socials;
     margin-left: 4.125rem;
     margin-bottom: 2.5rem;
     display: flex;
     align-items: flex-end;
-}
-
-.Page__footer {
-    grid-area: footer;
 }
 
 .Page__maker {
@@ -118,7 +147,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 8rem;
 }
 
 .Brand__image {
@@ -151,25 +180,4 @@ ul {
     font-size: 0.75rem;
     text-transform: uppercase;
     white-space: nowrap;
-}
-
-.Link {
-    color: inherit;
-    text-decoration: none;
-}
-
-.Link:hover {
-    text-decoration: underline;
-}
-
-.Button {
-    padding: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: inherit;
-}
-
-.Button:hover {
-    text-decoration: underline;
 }
