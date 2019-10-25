@@ -50,10 +50,6 @@ ul {
     text-align: center;
 }
 
-.Partnership {
-    text-transform: uppercase;
-}
-
 .Langs {
     display: flex;
     flex-direction: row;
@@ -252,31 +248,4 @@ ul {
 
 .Page--with-menu {
     transform: translateX(100%);
-}
-
-.Main {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('img/main/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.Brand {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 8rem;
-}
-
-.Brand__image {
-    height: 35vh;
-}
-
-.Brand__text {
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.5;
 }
