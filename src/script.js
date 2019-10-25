@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', run);
 let header;
 let footer;
 let menuBtnText;
+let menuBtnIcon;
 let menu;
 let page;
 
@@ -13,6 +14,7 @@ function run() {
     menu = document.getElementById('menu');
     page = document.getElementById('page');
     menuBtnText = document.getElementById('menu-button-text');
+    menuBtnIcon = document.getElementById('menu-button-icon');
 
     const menuBtn = document.getElementById('menu-button');
     // Function "toggleMenu" will be called for every click on the menu button.
@@ -35,4 +37,6 @@ function toggleMenu() {
     // Change the menu button's text.
     const closed = menu.classList.contains('Menu--closed');
     menuBtnText.textContent = closed ? 'Menu' : 'Close'
+    menuBtnIcon.src = closed ? 'img/common/menu-open.svg' : 'img/common/menu-close.svg';
+    menuBtnIcon.alt = closed ? 'Menu' : 'Close';
 }
