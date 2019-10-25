@@ -11,58 +11,80 @@
     <link href="https://fonts.googleapis.com/css?family=Alef&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="Page">
-        <header class="Page__header">
-            <div class="Page__menu-button">
-                <button class="Button MenuButton">
-                    <img class="MenuButton__icon" src="img/common/menu-open.svg" alt="Menu"/>
-                    <span class="MenuButton__text">Menu</span>
-                </button>
-            </div>
-            <div class="Title Page__partnership">
-                <div class="Partnership">
-                    <button class="Button Partnership__button">Become a partner</button>
-                </div>
-            </div>
-            <ul class="Langs Page__langs">
-                <li class="Langs__lang Langs__lang--active">
-                    <a class="Link" href="#">eng</a>
-                </li>
-                <li class="Langs__lang">
-                    <a class="Link" href="#">ru</a>
-                </li>
-                <li class="Langs__lang">
-                    <a class="Link" href="#">fr</a>
-                </li>
-            </ul>
-        </header>
-        <div class="Page__body">
-            <div class="Brand">
-                <img class="Brand__image" src="img/main/brand.png" alt="Escape from the Asylum">
-                <div class="Brand__text">
-                    Reveal more and more of the backstory and watch <br>the stories intertwine as you play
-                </div>
+    <header id="header" class="Header">
+        <div class="Header__menu-button">
+            <button id="menu-button" class="Button MenuButton">
+                <img class="MenuButton__icon" src="img/common/menu-open.svg" alt="Menu"/>
+                <span id="menu-button-text" class="MenuButton__text">Menu</span>
+            </button>
+        </div>
+        <div class="Header__partnership">
+            <div class="Partnership">
+                <button class="Button Partnership__button">Become a partner</button>
             </div>
         </div>
-        <footer class="Page__footer">
-            <div class="Page__socials">
-                <ul class="Socials">
-                    <li class="Socials__social">
-                        <a class="Link" href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li class="Socials__social">
-                        <a class="Link" href="#"><i class="fab fa-vk"></i></a>
-                    </li>
-                    <li class="Socials__social">
-                        <a class="Link" href="#"><i class="fab fa-google-plus-g"></i></a>
-                    </li>
-                </ul>
+        <ul class="Langs Header__langs">
+            <li class="Langs__lang Langs__lang--active">
+                <a class="Link" href="#">eng</a>
+            </li>
+            <li class="Langs__lang">
+                <a class="Link" href="#">ru</a>
+            </li>
+            <li class="Langs__lang">
+                <a class="Link" href="#">fr</a>
+            </li>
+        </ul>
+    </header>
+    <nav id="menu" class="Menu Menu--closed">
+        <div class="Menu__items">
+            <a class="Menu__item Menu__item--story" href="#">
+                <div class="Menu__item-background"></div>
+                <span class="Menu__item-name">Story</span>
+            </a>
+            <a class="Menu__item Menu__item--beginning" href="#">
+                <div class="Menu__item-background"></div>
+                <div class="Menu__item-name">Beginning</div>
+            </a>
+            <a class="Menu__item Menu__item--escape" href="#">
+                <div class="Menu__item-background"></div>
+                <div class="Menu__item-name">Escape</div>
+            </a>
+            <a class="Menu__item Menu__item--trailer" href="#">
+                <div class="Menu__item-background"></div>
+                <div class="Menu__item-name">Trailer</div>
+            </a>
+            <a class="Menu__item Menu__item--creators" href="#">
+                <div class="Menu__item-background"></div>
+                <div class="Menu__item-name">Creators</div>
+            </a>
+        </div>
+    </nav>
+    <div id="page" class="Page">
+        <div class="Brand">
+            <img class="Brand__image" src="img/main/brand.png" alt="Escape from the Asylum">
+            <div class="Brand__text">
+                Reveal more and more of the backstory and watch <br>the stories intertwine as you play
             </div>
-            <div class="Page__maker">
-                <a class="Link Maker" href="#">lifestyle-boardgames.com</a>
-            </div>
-        </footer>
+        </div>
     </div>
+    <footer id="footer" class="Footer">
+        <div class="Footer__socials">
+            <ul class="Socials">
+                <li class="Socials__social">
+                    <a class="Link" href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="Socials__social">
+                    <a class="Link" href="#"><i class="fab fa-vk"></i></a>
+                </li>
+                <li class="Socials__social">
+                    <a class="Link" href="#"><i class="fab fa-google-plus-g"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="Footer__maker">
+            <a class="Link Maker" href="#">lifestyle-boardgames.com</a>
+        </div>
+    </footer>
     <script src="https://kit.fontawesome.com/ccbc188c08.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>

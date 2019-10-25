@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    color: #fff;
     min-height: 100%;
 }
 
@@ -32,74 +33,6 @@ ul {
 
 .Button:hover {
     text-decoration: underline;
-}
-
-.Page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url('img/main/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-}
-
-.Page__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: grid;
-    grid-template-areas: "menu partnership langs";
-    grid-template-columns: 1fr 4fr 1fr;
-}
-
-.Page__body {
-    flex-grow: 1;
-}
-
-.Page__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: grid;
-    grid-template-areas: "socials maker";
-    grid-template-columns: 1fr 1fr;
-}
-
-.Page__menu-button {
-    grid-area: menu;
-    margin-top: 2.5rem;
-    margin-left: 4.125rem;
-}
-
-.Page__partnership {
-    grid-area: partnership;
-    margin: 2.5rem 0 0;
-}
-
-.Page__langs {
-    grid-area: langs;
-    margin-top: 2.5rem;
-    margin-right: 4.125rem;
-}
-
-.Page__socials {
-    grid-area: socials;
-    margin-left: 4.125rem;
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: flex-end;
-}
-
-.Page__maker {
-    grid-area: maker;
-    margin-right: 4.125rem;
-    margin-bottom: 2.5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
 }
 
 .MenuButton {
@@ -141,23 +74,42 @@ ul {
     text-decoration: underline;
 }
 
-.Brand {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8rem;
+.Header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-areas: "menu partnership langs";
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
-.Brand__image {
-    height: 35vh;
+.Header__menu-button {
+    grid-area: menu;
+    margin-top: 2.5rem;
+    margin-left: 4.125rem;
 }
 
-.Brand__text {
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.5;
+.Header__partnership {
+    grid-area: partnership;
+    margin: 2.5rem 0 0;
+    transition: opacity 0.2s;
+}
+
+.Header--with-menu .Header__partnership {
+    opacity: 0;
+}
+
+.Header__langs {
+    grid-area: langs;
+    margin-top: 2.5rem;
+    margin-right: 4.125rem;
+    transition: opacity 0.2s;
+}
+
+.Header--with-menu .Header__langs {
+    opacity: 0;
 }
 
 .Socials {
@@ -180,4 +132,147 @@ ul {
     font-size: 0.75rem;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.Footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-areas: "socials maker";
+    grid-template-columns: 1fr 1fr;
+    transition: opacity 0.2s;
+}
+
+.Footer--with-menu {
+    opacity: 0;
+    z-index: 0;
+}
+
+.Footer__socials {
+    grid-area: socials;
+    margin-left: 4.125rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.Footer__maker {
+    grid-area: maker;
+    margin-right: 4.125rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.Menu {
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+
+.Menu--closed {
+    transform: translateX(-100%);
+}
+
+.Menu__items {
+    width: 100vw;
+    height: 100vh;
+    background: #050831;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.Menu__item {
+    border-right: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Menu__item:last-child {
+    border-right: none;
+}
+
+.Menu__item-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.Menu__item--story .Menu__item-background {
+    background-image: url('img/common/menu/story.jpg');
+}
+
+.Menu__item--beginning .Menu__item-background {
+    background-image: url('img/common/menu/beginning.jpg');
+}
+
+.Menu__item--escape .Menu__item-background {
+    background-image: url('img/common/menu/escape.jpg');
+}
+
+.Menu__item--trailer .Menu__item-background {
+    background-image: url('img/common/menu/trailer.jpg');
+}
+.Menu__item--creators .Menu__item-background {
+    background-image: url('img/common/menu/creators.jpg');
+}
+
+.Menu__item:hover .Menu__item-background {
+    opacity: 1;
+}
+
+.Menu__item-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Menu__item:hover .Menu__item-name {
+    text-decoration: underline;
+}
+
+.Page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/main/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.Page--with-menu {
+    transform: translateX(100%);
+}
+
+.Brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.Brand__image {
+    height: 35vh;
+}
+
+.Brand__text {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
 }
