@@ -45,11 +45,11 @@ ul {
     text-transform: uppercase;
 }
 
-.Partnership {
+.Title {
     text-align: center;
 }
 
-.Partnership__button {
+.Partnership {
     text-transform: uppercase;
 }
 
@@ -91,13 +91,13 @@ ul {
     margin-left: 4.125rem;
 }
 
-.Header__partnership {
+.Header__title {
     grid-area: partnership;
     margin: 2.5rem 0 0;
     transition: opacity 0.2s;
 }
 
-.Header--with-menu .Header__partnership {
+.Header--with-menu .Header__title {
     opacity: 0;
 }
 
@@ -246,16 +246,19 @@ ul {
 
 .Page {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('img/main/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     transition: transform 0.5s;
 }
 
 .Page--with-menu {
     transform: translateX(100%);
+}
+
+.Main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/main/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .Brand {
@@ -264,7 +267,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 8rem;
+    padding-top: 8rem;
 }
 
 .Brand__image {
