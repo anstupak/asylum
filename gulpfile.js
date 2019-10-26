@@ -18,6 +18,7 @@ function watch_files() {
     watch('src/*.js', buildScripts);
     watch('src/*.css', buildStyles);
     watch('src/**/*.{jpg,png,svg}', buildImages);
+    watch('src/**/*.{ttf}', buildFonts);
     // watch('src/*.html', series(buildHtml, reload));
     // watch('src/*.js', series(buildScripts, reload));
     // watch('src/*.css', series(buildStyles, reload));
@@ -48,8 +49,18 @@ const buildImages = series(
         return del(['dist/img']);
     },
     function buildImages() {
-        return src('src/assets/**/*.{jpg,png,svg}')
+        return src('src/img/**/*.{jpg,png,svg}')
             .pipe(dest('dist/img/'));
+    },
+);
+
+const buildFonts = series(
+    function cleanFonts() {
+        return del(['dist/fonts']);
+    },
+    function buildFonts() {
+        return src('src/fonts/**/*.ttf')
+            .pipe(dest('dist/fonts/'));
     },
 );
 
@@ -59,6 +70,6 @@ function clean(cb) {
     cb()
 }
 
-exports.build = parallel(clean, buildImages, buildScripts, buildStyles, buildHtml);
+exports.build = parallel(clean, buildImages, buildFonts, buildScripts, buildStyles, buildHtml);
 
 exports.watch = parallel(watch_files);

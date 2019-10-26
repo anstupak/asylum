@@ -21,7 +21,7 @@
         </div>
         <div class="Header__title">
             <div class="Title">
-                <button class="Button Partnership">Become a partner</button>
+                <button id="become-partner-button" class="Button Partnership">Become a partner</button>
             </div>
         </div>
         <ul class="Langs Header__langs">
@@ -88,7 +88,41 @@
             <a class="Link Maker" href="#">lifestyle-boardgames.com</a>
         </div>
     </footer>
+    <div id="partnership-modal" class="Modal Modal--opened Modal--visible ParthershipModal">
+        <div id="partnership-modal-backdoor" class="Modal__backdoor"></div>
+        <form class="Modal__content ParthershipForm" method="get" action="#">
+            <div class="PartnershipForm__container">
+                <div class="PartnershipForm__content">
+                    <div class="PartnershipForm__title">Become a partner</div>
+                    <div class="PartnershipForm__info">
+                        Please fill in the details below and we will contact you shortly<br/>
+                        * - required field
+                    </div>
+                    <div class="PartnershipForm__body">
+                        <div class="PartnershipForm__field">
+                            <label for="name" class="PartnershipForm__label">Your Name*</label>
+                            <input type="text" id="name" name="name" class="PartnershipForm__input" autofocus/>
+                        </div>
+                        <div class="PartnershipForm__field">
+                            <label for="company" class="PartnershipForm__label">Your Company*</label>
+                            <input type="text" id="company" name="company" class="PartnershipForm__input"/>
+                        </div>
+                        <div class="PartnershipForm__field">
+                            <label for="phone" class="PartnershipForm__label">Your Phone*</label>
+                            <input type="text" id="phone" name="phone" class="PartnershipForm__input"/>
+                        </div>
+                        <div class="PartnershipForm__field">
+                            <label for="comment" class="PartnershipForm__label">Comment</label>
+                            <textarea type="text" id="comment" name="comment" class="PartnershipForm__input PartnershipForm__input--textarea" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="PartnershipForm__send">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <script src="https://kit.fontawesome.com/ccbc188c08.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
