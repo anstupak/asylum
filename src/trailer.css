@@ -1,0 +1,29 @@
+.Trailer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/main/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Trailer__glass {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.8;
+}
+
+.Trailer__video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

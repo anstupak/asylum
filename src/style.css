@@ -50,6 +50,10 @@ ul {
     text-align: center;
 }
 
+.Home {
+    text-transform: uppercase;
+}
+
 .Langs {
     display: flex;
     flex-direction: row;
