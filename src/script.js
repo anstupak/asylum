@@ -40,3 +40,38 @@ function toggleMenu() {
     menuBtnIcon.src = closed ? 'img/common/menu-open.svg' : 'img/common/menu-close.svg';
     menuBtnIcon.alt = closed ? 'Menu' : 'Close';
 }
+
+function createModal(modalId, modalBackDoorId) {
+    const modal = document.getElementById(modalId);
+
+    function open() {
+        modal.classList.add('Modal--opened');
+        Math.max(modal.offsetWidth, modal.scrollWidth);
+        modal.classList.add('Modal--visible');
+    }
+
+    function close() {
+        function closingHandler() {
+            modal.classList.remove('Modal--opened');
+            modal.removeEventListener("transitionend", closingHandler);
+        }
+        modal.addEventListener("transitionend", closingHandler, false);
+        modal.classList.remove('Modal--visible');
+    }
+
+    const backDoor = document.getElementById(modalBackDoorId);
+    backDoor.addEventListener('click', function closePartnershipModal() {
+        close();
+    });
+
+    return {
+        toggle: function() {
+            const opened = modal.classList.contains('Modal--opened');
+            if (opened) {
+                close();
+            } else {
+                open();
+            }
+        }
+    };
+}
