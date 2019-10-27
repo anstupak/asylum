@@ -51,6 +51,20 @@
     left: 73%;
 }
 
+.StoryHospitalModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80%;
+}
+
+.StoryHospitalModal__newspaper {
+    width: auto;
+    height: 100%;
+}
+
 .StoryPatientSlider {
     position: absolute;
     top: 0;
