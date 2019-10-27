@@ -7,13 +7,7 @@ function run() {
     initModal('story-doctors-modal');
 
 
-    initSlider(
-        'StoryPatientSlider__card',
-        'StoryPatientSlider__card--active',
-        'StoryPatientSlider__card--closed',
-        'slider-arrow-left',
-        'slider-arrow-right'
-    );
+    initSlider('patient-arrow-left', 'patient-arrow-right');
 }
 
 function initModal(modalName) {
@@ -27,11 +21,11 @@ function initModal(modalName) {
     });
 }
 
-function initSlider(elementClass, activeElementClass, closedClassName, leftBtnId, rightBtnId) {
+function initSlider(leftBtnId, rightBtnId) {
     const leftBtn = document.getElementById(leftBtnId)
     const rightBtn = document.getElementById(rightBtnId)
 
-    let elements = nodeListToArr(document.querySelectorAll('.' + elementClass));
+    let elements = nodeListToArr(document.querySelectorAll('.Slider__card'));
 
     rightBtn.addEventListener('click', function() {
         const current = elements[0];
@@ -40,19 +34,19 @@ function initSlider(elementClass, activeElementClass, closedClassName, leftBtnId
 
         for (let i = 0; i < elements.length; i++) {
             const el = elements[i];
-            el.classList.remove('StoryPatientSlider__card--1')
-            el.classList.remove('StoryPatientSlider__card--2')
-            el.classList.remove('StoryPatientSlider__card--3')
-            el.classList.remove('StoryPatientSlider__card--4')
+            el.classList.remove('Slider__card--1')
+            el.classList.remove('Slider__card--2')
+            el.classList.remove('Slider__card--3')
+            el.classList.remove('Slider__card--4')
 
             if (i !== elements.length - 1) {
-                el.classList.add('StoryPatientSlider__card--' + (i + 1))
+                el.classList.add('Slider__card--' + (i + 1))
             } else {
-                el.classList.add('StoryPatientSlider__card--closed');
+                el.classList.add('Slider__card--closed');
                 function closingHandler() {
                     el.removeEventListener("transitionend", closingHandler);
-                    el.classList.remove('StoryPatientSlider__card--closed');
-                    el.classList.add('StoryPatientSlider__card--4')
+                    el.classList.remove('Slider__card--closed');
+                    el.classList.add('Slider__card--' + ( i + 1))
                 }
                 el.addEventListener("transitionend", closingHandler, false);
             }
