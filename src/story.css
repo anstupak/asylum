@@ -15,7 +15,9 @@
     padding: 5px;
     transform-origin: 50% 50%;
     transition: 0.5s;
+    outline: none;
 }
+
 .Story_marker::after {
     content: "";
     display: block;
@@ -24,22 +26,108 @@
     background-color: #fff;
     border-radius: 50%;
 }
+
 .Story_marker:hover {
     transform: scale(2.395) rotate(0.02deg);
 }
+
 #story-hospital-modal-button {
     top: 82%;
     left: 21%;
 }
+
 #story-patient-modal-button {
     top: 79%;
     left: 45%;
 }
+
 #story-doctors-modal-button {
     top: 49%;
     left: 57%;
 }
+
 #story-floor-modal-button {
     top: 82%;
     left: 73%;
+}
+
+.StoryPatientSlider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    perspective: 1000px;
+    perspective-origin: 50% -50%;
+    pointer-events: none;
+}
+
+.StoryPatientSlider__card {
+    pointer-events: all;
+    width: auto;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.StoryPatientSlider__card--1 {
+    z-index: 250;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.StoryPatientSlider__card--2 {
+    z-index: 249;
+    transform: translate(-50%, -54%) scale(0.95);
+}
+
+.StoryPatientSlider__card--3 {
+    z-index: 248;
+    transform: translate(-50%, -58%) scale(0.89);
+}
+
+.StoryPatientSlider__card--4 {
+    z-index: 247;
+    transform: translate(-50%, -63%) scale(0.81);
+    opacity: 0;
+}
+
+.StoryPatientSlider__card--closed {
+    z-index: 251;
+    transform: translate(50%, -50%) rotate(10deg);
+    transition: transform 0.4s ease-out, opacity 0.2s ease-out 0.2s;
+    opacity: 0;
+}
+
+.StoryPatientSlider__arrow {
+    pointer-events: all;
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 250;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: none;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    border: 1px solid #fff;
+    border-radius: 1.5rem;
+    padding: 1.1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.StoryPatientSlider__arrow--left {
+    left: 3rem;
+    background-image: url('img/story/slider-arrow-left.svg');
+    background-position-x: 45%;
+}
+
+.StoryPatientSlider__arrow--right {
+    right: 3rem;
+    background-image: url('img/story/slider-arrow-rigth.svg');
+    background-position-x: 55%;
 }

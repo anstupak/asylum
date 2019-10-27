@@ -264,6 +264,7 @@ ul {
     left: 0;
     right: 0;
     display: none;
+    z-index: 200;
 }
 
 .Modal--opened {
