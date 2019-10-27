@@ -1,6 +1,7 @@
 // Wait for loading of the page
 document.addEventListener('DOMContentLoaded', run);
 
+let body;
 let header;
 let footer;
 let menuBtnText;
@@ -9,6 +10,7 @@ let menu;
 let page;
 
 function run() {
+    body = document.getElementsByTagName('body')[0];
     header = document.getElementById('header');
     footer = document.getElementById('footer');
     menu = document.getElementById('menu');
@@ -25,6 +27,7 @@ function run() {
  * Handles clicks on the menu button: opens or hides the menu.
  */
 function toggleMenu() {
+    body.classList.toggle('Body--with-menu');
     // Hide the header's elements when the menu is opened
     header && header.classList.toggle('Header--with-menu');
     // Hide the footer when the menu is opened
@@ -39,6 +42,16 @@ function toggleMenu() {
     menuBtnText.textContent = closed ? 'Menu' : 'Close'
     menuBtnIcon.src = closed ? 'img/common/menu-open.svg' : 'img/common/menu-close.svg';
     menuBtnIcon.alt = closed ? 'Menu' : 'Close';
+
+    if (closed) {
+        if (onMenuClose) {
+            onMenuClose();
+        }
+    } else {
+        if (onMenuOpen) {
+            onMenuOpen();
+        }
+    }
 }
 
 function createModal(modalId, modalBackDoorId) {

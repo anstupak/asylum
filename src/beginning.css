@@ -1,0 +1,10 @@
+.Beginning {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.Beginning__bg {
+    height: 100%;
+}

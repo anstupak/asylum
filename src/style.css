@@ -6,13 +6,16 @@ html {
 body {
     color: #fff;
     min-height: 100%;
-    overflow: hidden;
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.Body--with-menu {
+    overflow: hidden;
 }
 
 .Link {
@@ -76,7 +79,7 @@ ul {
 }
 
 .Header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -136,7 +139,7 @@ ul {
 }
 
 .Footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -246,7 +249,7 @@ ul {
 }
 
 .Page {
-    position: absolute;
+    position: relative;
     transition: transform 0.5s;
 }
 
@@ -255,7 +258,7 @@ ul {
 }
 
 .Modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
