@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', run);
 function run() {
     initModal('story-hospital-modal');
     initModal('story-patient-modal');
+    initModal('story-doctors-modal');
 
 
     initSlider(

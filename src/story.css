@@ -145,3 +145,17 @@
     background-image: url('img/story/slider-arrow-rigth.svg');
     background-position-x: 55%;
 }
+
+.StoryDoctorsModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80%;
+}
+
+.StoryDoctorsModal__photo {
+    width: auto;
+    height: 100%;
+}
