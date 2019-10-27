@@ -1,0 +1,10 @@
+.Escape {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.Escape__bg {
+    height: 100%;
+}
