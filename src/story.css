@@ -1,0 +1,45 @@
+.Story {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/story/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Story_marker {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    padding: 5px;
+    transform-origin: 50% 50%;
+    transition: 0.5s;
+}
+.Story_marker::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.Story_marker:hover {
+    transform: scale(2.395) rotate(0.02deg);
+}
+#story-hospital-modal-button {
+    top: 82%;
+    left: 21%;
+}
+#story-patient-modal-button {
+    top: 79%;
+    left: 45%;
+}
+#story-doctors-modal-button {
+    top: 49%;
+    left: 57%;
+}
+#story-floor-modal-button {
+    top: 82%;
+    left: 73%;
+}
