@@ -5,9 +5,11 @@ function run() {
     initModal('story-hospital-modal');
     initModal('story-patient-modal');
     initModal('story-doctors-modal');
+    initModal('story-floor-modal');
 
 
-    initSlider('patient-arrow-left', 'patient-arrow-right');
+    initSlider('patient-slider', 'patient-arrow-left', 'patient-arrow-right');
+    initSlider('evac-slider', 'floor-arrow-left', 'floor-arrow-right');
 }
 
 function initModal(modalName) {
@@ -21,11 +23,12 @@ function initModal(modalName) {
     });
 }
 
-function initSlider(leftBtnId, rightBtnId) {
+function initSlider(sliderId, leftBtnId, rightBtnId) {
+    const slider = document.getElementById(sliderId)
     const leftBtn = document.getElementById(leftBtnId)
     const rightBtn = document.getElementById(rightBtnId)
 
-    let elements = nodeListToArr(document.querySelectorAll('.Slider__card'));
+    let elements = nodeListToArr(slider.querySelectorAll('.Slider__card'));
 
     rightBtn.addEventListener('click', function() {
         const current = elements[0];
