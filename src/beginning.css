@@ -22,10 +22,15 @@
     width: 52.58%;
 }
 
+.Door--high .Door__frame {
+    top: 7.41%
+}
+
 .DoorTooltip {
     position: absolute;
-    top: 35%;
+    top: 28.8%;
     left: 50%;
+    transform: translateX(-50%);
     z-index: 300;
     width: 26vw;
     background-color: #000;
@@ -35,8 +40,13 @@
     transition: opacity 0.4s;
 }
 
-.Door__frame:last-child .DoorTooltip {
+.Door--high .DoorTooltip {
+    top: 23.5%;
+}
+
+.Door:last-child .DoorTooltip {
     left: initial;
+    transform: none;
     right: 0;
 }
 
