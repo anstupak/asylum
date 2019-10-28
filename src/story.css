@@ -115,35 +115,15 @@
     opacity: 0;
 }
 
-.Slider__arrow {
+.Slider__next {
     pointer-events: all;
     position: absolute;
-    display: block;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 250;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: none;
-    background-repeat: no-repeat;
-    background-position-y: center;
-    border: 1px solid #fff;
-    border-radius: 1.5rem;
-    padding: 1.1rem;
     outline: none;
-    cursor: pointer;
-}
-
-.Slider__arrow--left {
-    left: 3rem;
-    background-image: url('img/story/slider-arrow-left.svg');
-    background-position-x: 45%;
-}
-
-.Slider__arrow--right {
-    right: 3rem;
-    background-image: url('img/story/slider-arrow-rigth.svg');
-    background-position-x: 55%;
+    text-transform: uppercase;
 }
 
 .StoryDoctorsModal {

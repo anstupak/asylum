@@ -7,9 +7,8 @@ function run() {
     initModal('story-doctors-modal');
     initModal('story-floor-modal');
 
-
-    initSlider('patient-slider', 'patient-arrow-left', 'patient-arrow-right');
-    initSlider('evac-slider', 'floor-arrow-left', 'floor-arrow-right');
+    initSlider('patient-slider');
+    initSlider('evac-slider');
 }
 
 function initModal(modalName) {
@@ -23,26 +22,25 @@ function initModal(modalName) {
     });
 }
 
-function initSlider(sliderId, leftBtnId, rightBtnId) {
+function initSlider(sliderId) {
     const slider = document.getElementById(sliderId)
-    const leftBtn = document.getElementById(leftBtnId)
-    const rightBtn = document.getElementById(rightBtnId)
+    const nextBtn = slider.querySelector('.Slider__next')
 
-    let elements = nodeListToArr(slider.querySelectorAll('.Slider__card'));
+    let cards = nodeListToArr(slider.querySelectorAll('.Slider__card'));
 
-    rightBtn.addEventListener('click', function() {
-        const current = elements[0];
-        elements = elements.slice(1);
-        elements.push(current);
+    function showNextCard() {
+        const current = cards[0];
+        cards = cards.slice(1);
+        cards.push(current);
 
-        for (let i = 0; i < elements.length; i++) {
-            const el = elements[i];
+        for (let i = 0; i < cards.length; i++) {
+            const el = cards[i];
             el.classList.remove('Slider__card--1')
             el.classList.remove('Slider__card--2')
             el.classList.remove('Slider__card--3')
             el.classList.remove('Slider__card--4')
 
-            if (i !== elements.length - 1) {
+            if (i !== cards.length - 1) {
                 el.classList.add('Slider__card--' + (i + 1))
             } else {
                 el.classList.add('Slider__card--closed');
@@ -54,7 +52,19 @@ function initSlider(sliderId, leftBtnId, rightBtnId) {
                 el.addEventListener("transitionend", closingHandler, false);
             }
         }
-    });
+    }
+
+    function clickHandler(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        showNextCard();
+    }
+
+    nextBtn.addEventListener('click', clickHandler);
+    for (let i = 0; i < cards.length; i++) {
+        const el = cards[i];
+        el.addEventListener('click', clickHandler);
+    }
 
     function nodeListToArr(list) {
         const arr = [];
