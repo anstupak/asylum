@@ -5,6 +5,58 @@
     flex-wrap: nowrap;
 }
 
-.Beginning__bg {
+.Door {
     height: 100%;
+    position: relative;
+}
+
+.Door__bg {
+    height: 100%;
+}
+
+.Door__frame {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 8.8%;
+    width: 52.58%;
+}
+
+.DoorTooltip {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    z-index: 300;
+    width: 26vw;
+    background-color: #000;
+    opacity: 0;
+    border-radius: 30px;
+    padding: 3.56rem 2.625rem;
+    transition: opacity 0.4s;
+}
+
+.Door__frame:last-child .DoorTooltip {
+    left: initial;
+    right: 0;
+}
+
+.Door__frame:hover .DoorTooltip {
+    opacity: 0.8;
+}
+
+.DoorTooltip__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.DoorTooltip__desc {
+    line-height: 1.5;
+}
+
+#door203 {
+    top: 8.8%;
+    bottom: 0;
+    left: 19.74%;
+    width: 21.61%;
 }
