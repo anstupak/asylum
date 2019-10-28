@@ -40,10 +40,6 @@
     transition: opacity 0.4s;
 }
 
-.Door--high .DoorTooltip {
-    top: 23.5%;
-}
-
 .Door:last-child .DoorTooltip {
     left: initial;
     transform: none;
@@ -62,11 +58,4 @@
 
 .DoorTooltip__desc {
     line-height: 1.5;
-}
-
-#door203 {
-    top: 8.8%;
-    bottom: 0;
-    left: 19.74%;
-    width: 21.61%;
 }
